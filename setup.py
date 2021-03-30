@@ -32,7 +32,7 @@ def install_requires():
 
 setup(
     name='py-binance-chain',
-    version=find_version("binance_chain", "__init__.py"),
+    version=find_version("py_binance_chain", "__init__.py"),
     packages=find_packages(),
     description='Binance Chain HTTP API python implementation',
     url='https://github.com/Adelapt98/python-binance-chain',

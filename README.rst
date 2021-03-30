@@ -78,9 +78,9 @@ If using the production server there is no need to pass the environment variable
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.constants import KlineInterval
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.constants import KlineInterval
+    from py_binance_chain.environment import BinanceEnvironment
 
     # initialise with Testnet environment
     testnet_env = BinanceEnvironment.get_testnet_env()
@@ -145,7 +145,7 @@ If using the production server there is no need to pass the environment variable
     # get transaction
     transaction = client.get_transaction('95DD6921370D74D0459590268B439F3DD49F6B1D090121AFE4B2183C040236F3')
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain>`_ docs for more information.
 
 Async HTTP Client
 -----------------
@@ -159,8 +159,8 @@ All methods are otherwise the same as the HttpApiClient
 
 .. code:: python
 
-    from binance_chain.http import AsyncHttpApiClient
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.http import AsyncHttpApiClient
+    from py_binance_chain.environment import BinanceEnvironment
 
     loop = None
 
@@ -197,7 +197,7 @@ To create and use the Testnet environment is as easy as
 
 .. code:: python
 
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.environment import BinanceEnvironment
 
     # initialise with Testnet environment
     testnet_env = BinanceEnvironment.get_testnet_env()
@@ -206,18 +206,18 @@ You may also create your own custom environments, this may be useful such as con
 
 .. code:: python
 
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.environment import BinanceEnvironment
 
     # create custom environment
     my_env = BinanceEnvironment(api_url="<api_url>", wss_url="<wss_url>", hrp="<hrp>")
 
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain.environment>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain.environment>`_ docs for more information.
 
 Wallet
 ------
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain.wallet>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain.wallet>`_ docs for more information.
 
 The wallet is required if you want to place orders, transfer funds or freeze and unfreeze tokens.
 
@@ -236,8 +236,8 @@ see examples below
 
 .. code:: python
 
-    from binance_chain.wallet import Wallet
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.wallet import Wallet
+    from py_binance_chain.environment import BinanceEnvironment
 
     testnet_env = BinanceEnvironment.get_testnet_env()
     wallet = Wallet('private_key_string', env=testnet_env)
@@ -249,8 +249,8 @@ see examples below
 
 .. code:: python
 
-    from binance_chain.wallet import Wallet
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.wallet import Wallet
+    from py_binance_chain.environment import BinanceEnvironment
 
     testnet_env = BinanceEnvironment.get_testnet_env()
     wallet = Wallet.create_wallet_from_mnemonic('mnemonic word string', env=testnet_env)
@@ -262,8 +262,8 @@ see examples below
 
 .. code:: python
 
-    from binance_chain.wallet import Wallet
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.wallet import Wallet
+    from py_binance_chain.environment import BinanceEnvironment
 
     testnet_env = BinanceEnvironment.get_testnet_env(, env=testnet_env)
     wallet = Wallet.create_random_wallet(env=env)
@@ -274,7 +274,7 @@ see examples below
 Broadcast Messages on HttpApiClient
 -----------------------------------
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain.messages>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain.messages>`_ docs for more information.
 
 Requires a Wallet to have been created.
 
@@ -288,9 +288,9 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import NewOrderMsg
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import NewOrderMsg
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -312,7 +312,7 @@ General case
 
 .. code:: python
 
-    from binance_chain.messages import LimitOrderBuyMsg
+    from py_binance_chain.messages import LimitOrderBuyMsg
 
     limit_order_msg = LimitOrderBuyMsg(
         wallet=wallet,
@@ -325,7 +325,7 @@ General case
 
 .. code:: python
 
-    from binance_chain.messages import LimitOrderSellMsg
+    from py_binance_chain.messages import LimitOrderSellMsg
 
     limit_order_msg = LimitOrderSellMsg(
         wallet=wallet,
@@ -338,9 +338,9 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import CancelOrderMsg
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import CancelOrderMsg
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -359,9 +359,9 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import FreezeMsg
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import FreezeMsg
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -380,9 +380,9 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import UnFreezeMsg
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import UnFreezeMsg
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -401,9 +401,9 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import TransferMsg
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import TransferMsg
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -421,9 +421,9 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import TransferMsg, Transfer
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import TransferMsg, Transfer
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -443,10 +443,10 @@ General case
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import VoteMsg
-    from binance_chain.wallet import Wallet
-    from binance_chain.constants import VoteOption
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import VoteMsg
+    from py_binance_chain.wallet import Wallet
+    from py_binance_chain.constants import VoteOption
 
     wallet = Wallet('private_key_string')
     client = HttpApiClient()
@@ -468,8 +468,8 @@ This is a transfer example
 
 .. code:: python
 
-    from binance_chain.messages import TransferMsg, Signature
-    from binance_chain.wallet import Wallet
+    from py_binance_chain.messages import TransferMsg, Signature
+    from py_binance_chain.wallet import Wallet
 
     wallet = Wallet('private_key_string')
 
@@ -486,14 +486,14 @@ This is a transfer example
 Websockets
 ----------
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain.websockets>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain.websockets>`_ docs for more information.
 
 .. code:: python
 
     import asyncio
 
-    from binance_chain.websockets import BinanceChainSocketManager
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.websockets import BinanceChainSocketManager
+    from py_binance_chain.environment import BinanceEnvironment
 
     testnet_env = BinanceEnvironment.get_testnet_env()
 
@@ -552,14 +552,14 @@ See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.ht
 Node RPC HTTP
 -------------
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain.node_rpc>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain.node_rpc>`_ docs for more information.
 
-The binance_chain.http.HttpApiClient has a helper function `get_node_peers()` which returns a list of peers with Node RPC functionality
+The py_binance_chain.http.HttpApiClient has a helper function `get_node_peers()` which returns a list of peers with Node RPC functionality
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient, PeerType
-    from binance_chain.node_rpc import HttpRpcClient
+    from py_binance_chain.http import HttpApiClient, PeerType
+    from py_binance_chain.node_rpc import HttpRpcClient
 
     httpapiclient = HttpApiClient()
 
@@ -591,13 +591,13 @@ An aiohttp implementation of the Node RPC HTTP API.
 
 Use the async `create` classmethod to initialise an instance of the class.
 
-All methods are the same as the binance_chain.node_rpc.http.HttpRpcClient.
+All methods are the same as the py_binance_chain.node_rpc.http.HttpRpcClient.
 
 .. code:: python
 
-    from binance_chain.node_rpc.http import AsyncHttpRpcClient
-    from binance_chain.http import AsyncHttpApiClient, PeerType
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.node_rpc.http import AsyncHttpRpcClient
+    from py_binance_chain.http import AsyncHttpApiClient, PeerType
+    from py_binance_chain.environment import BinanceEnvironment
 
     loop = None
 
@@ -640,10 +640,10 @@ If the sequence gets out of sync call `wallet.reload_account_sequence(client)`, 
 
 .. code:: python
 
-    from binance_chain.node_rpc import HttpRpcClient
-    from binance_chain.messages import LimitOrderBuyMsg
-    from binance_chain.wallet import Wallet
-    from binance_chain.constants import RpcBroadcastRequestType
+    from py_binance_chain.node_rpc import HttpRpcClient
+    from py_binance_chain.messages import LimitOrderBuyMsg
+    from py_binance_chain.wallet import Wallet
+    from py_binance_chain.constants import RpcBroadcastRequestType
 
     wallet = Wallet('private_key_string')
     rpc_client = HttpRpcClient(listen_addr)
@@ -681,7 +681,7 @@ check the number of clients connected to and not exceed that amount
 .. code:: python
 
     import asyncio
-    from binance_chain.node_rpc.pooled_client import PooledRpcClient
+    from py_binance_chain.node_rpc.pooled_client import PooledRpcClient
 
 
     async def main():
@@ -727,7 +727,7 @@ To keep the peer connections up to date you may re-initialise the list of peers 
 Node RPC Websockets
 -------------------
 
-See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-binance_chain.node_rpc.websockets>`_ docs for more information.
+See `API <https://python-binance-chain.readthedocs.io/en/latest/binance-chain.html#module-py_binance_chain.node_rpc.websockets>`_ docs for more information.
 
 For subscribe query examples see the `documentation here <https://docs.binance.org/api-reference/node-rpc.html#631-subscribe>`_
 
@@ -735,9 +735,9 @@ For subscribe query examples see the `documentation here <https://docs.binance.o
 
     import asyncio
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.environment import BinanceEnvironment
-    from binance_chain.node_rpc.websockets import WebsocketRpcClient
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.node_rpc.websockets import WebsocketRpcClient
 
     loop = None
 
@@ -805,9 +805,9 @@ Note: This may not be 100% reliable as the response info available from Binance 
 .. code:: python
 
 
-    from binance_chain.depthcache import DepthCacheManager
-    from binance_chain.environment import BinanceEnvironment
-    from binance_chain.http import HttpApiClient
+    from py_binance_chain.depthcache import DepthCacheManager
+    from py_binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.http import HttpApiClient
 
     dcm = None
     loop = None
@@ -846,7 +846,7 @@ A Service to sign and optionally also broadcast messages for you.
 
 The service holds the private keys of the accounts and supplies a username and password to interact with these accounts.
 
-This client re-uses the binance_chain.messages types. In this case no wallet parameter is required.
+This client re-uses the py_binance_chain.messages types. In this case no wallet parameter is required.
 
 This client interacts with the `binance-chain-signing-service <https://github.com/sammchardy/binance-chain-signing-service>`_ read the docs there
 to create our own signing service.
@@ -855,8 +855,8 @@ to create our own signing service.
 
 .. code:: python
 
-    from binance_chain.messages import NewOrderMsg
-    from binance_chain.signing.http import HttpApiSigningClient
+    from py_binance_chain.messages import NewOrderMsg
+    from py_binance_chain.signing.http import HttpApiSigningClient
 
     signing_client = HttpApiSigningClient('http://localhost:8000', username='sam', password='mypass')
 
@@ -872,7 +872,7 @@ to create our own signing service.
     )
     new_order_hex = signing_client.sign_order(new_order_msg, wallet_name='wallet_1')
 
-the `sign_order` method can also take a binance_chain.messages.LimitOrderBuyMsg or binance_chain.messages.LimitOrderSellMsg instance.
+the `sign_order` method can also take a py_binance_chain.messages.LimitOrderBuyMsg or py_binance_chain.messages.LimitOrderSellMsg instance.
 
 
 This hex can then be broadcast using the normal HTTP Client like so
@@ -880,8 +880,8 @@ This hex can then be broadcast using the normal HTTP Client like so
 
 .. code:: python
 
-    from binance_chain.http import HttpApiClient
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.environment import BinanceEnvironment
 
     # initialise with environment that is supported by the signing service wallet
     testnet_env = BinanceEnvironment.get_testnet_env()
@@ -889,7 +889,7 @@ This hex can then be broadcast using the normal HTTP Client like so
 
     res = client.broadcast_hex_msg(new_order_hex['signed_msg'], sync=True)
 
-The signing service supports binance_chain.messages types
+The signing service supports py_binance_chain.messages types
 NewOrderMsg, CancelOrderMsg, FreezeMsg, UnFreezeMsg and TransferMsg
 
 
@@ -899,8 +899,8 @@ To sign and broadcast an order use the `broadcast_order` method. This returns th
 
 .. code:: python
 
-    from binance_chain.messages import NewOrderMsg
-    from binance_chain.signing.http import HttpApiSigningClient
+    from py_binance_chain.messages import NewOrderMsg
+    from py_binance_chain.signing.http import HttpApiSigningClient
 
     signing_client = HttpApiSigningClient('http://localhost:8000', username='sam', password='mypass')
 
@@ -924,9 +924,9 @@ Like all other libraries there is an async version.
 
 .. code:: python
 
-    from binance_chain.signing.http import AsyncHttpApiSigningClient
-    from binance_chain.http import AsyncHttpApiClient, PeerType
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.signing.http import AsyncHttpApiSigningClient
+    from py_binance_chain.http import AsyncHttpApiClient, PeerType
+    from py_binance_chain.environment import BinanceEnvironment
 
     loop = None
 
@@ -978,8 +978,8 @@ Uses the `btchip-python library <https://github.com/LedgerHQ/btchip-python>`_ if
 
 .. code:: python
 
-    from binance_chain.ledger import getDongle, LedgerApp, LedgerWallet
-    from binance_chain.environment import BinanceEnvironment
+    from py_binance_chain.ledger import getDongle, LedgerApp, LedgerWallet
+    from py_binance_chain.environment import BinanceEnvironment
 
     dongle = getDongle(debug=True)
 
@@ -1008,8 +1008,8 @@ Create a Wallet to use with the HTTP and Node RPC clients
 
 
     # now create messages and sign them with this wallet
-    from binance_chain.http import HttpApiClient
-    from binance_chain.messages import NewOrderMsg, OrderType, OrderSide, TimeInForce
+    from py_binance_chain.http import HttpApiClient
+    from py_binance_chain.messages import NewOrderMsg, OrderType, OrderSide, TimeInForce
 
     client = HttpApiClient(env=testnet_env)
     new_order_msg = NewOrderMsg(

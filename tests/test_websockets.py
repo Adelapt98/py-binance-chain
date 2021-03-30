@@ -1,8 +1,8 @@
 import pytest
 import asyncio
 
-from binance_chain.websockets import BinanceChainSocketManager, ReconnectingWebsocket
-from binance_chain.environment import BinanceEnvironment
+from py_binance_chain.websockets import BinanceChainSocketManager, ReconnectingWebsocket
+from py_binance_chain.environment import BinanceEnvironment
 
 
 class TestWebsockets:

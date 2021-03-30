@@ -4,7 +4,7 @@ Binance Chain API
 client module
 ----------------------
 
-.. automodule:: binance_chain.http
+.. automodule:: py_binance_chain.http
     :members:
     :undoc-members:
     :show-inheritance:
@@ -13,7 +13,7 @@ client module
 environment module
 ----------------------
 
-.. automodule:: binance_chain.environment
+.. automodule:: py_binance_chain.environment
     :members:
     :undoc-members:
     :show-inheritance:
@@ -22,7 +22,7 @@ environment module
 wallet module
 ----------------------
 
-.. automodule:: binance_chain.wallet
+.. automodule:: py_binance_chain.wallet
     :members:
     :undoc-members:
     :show-inheritance:
@@ -31,7 +31,7 @@ wallet module
 messages module
 ----------------------
 
-.. automodule:: binance_chain.messages
+.. automodule:: py_binance_chain.messages
     :members:
     :undoc-members:
     :show-inheritance:
@@ -40,7 +40,7 @@ messages module
 websockets module
 --------------------------
 
-.. automodule:: binance_chain.websockets
+.. automodule:: py_binance_chain.websockets
     :members:
     :undoc-members:
     :show-inheritance:
@@ -49,7 +49,7 @@ websockets module
 node rpc http module
 --------------------------
 
-.. automodule:: binance_chain.node_rpc.http
+.. automodule:: py_binance_chain.node_rpc.http
     :members:
     :undoc-members:
     :show-inheritance:
@@ -58,7 +58,7 @@ node rpc http module
 node rpc websockets module
 --------------------------
 
-.. automodule:: binance_chain.node_rpc.websockets
+.. automodule:: py_binance_chain.node_rpc.websockets
     :members:
     :undoc-members:
     :show-inheritance:
@@ -67,7 +67,7 @@ node rpc websockets module
 signing service http module
 ---------------------------
 
-.. automodule:: binance_chain.signing.http
+.. automodule:: py_binance_chain.signing.http
     :members:
     :undoc-members:
     :show-inheritance:
@@ -76,7 +76,7 @@ signing service http module
 deptch cache module
 --------------------------
 
-.. automodule:: binance_chain.depthcache
+.. automodule:: py_binance_chain.depthcache
     :members:
     :undoc-members:
     :show-inheritance:
@@ -85,7 +85,7 @@ deptch cache module
 constants module
 ----------------------
 
-.. automodule:: binance_chain.constants
+.. automodule:: py_binance_chain.constants
     :members:
     :undoc-members:
     :show-inheritance:
@@ -95,7 +95,7 @@ constants module
 exceptions module
 --------------------------
 
-.. automodule:: binance_chain.exceptions
+.. automodule:: py_binance_chain.exceptions
     :members:
     :undoc-members:
     :show-inheritance:
@@ -104,7 +104,7 @@ exceptions module
 utils.encode_utils module
 --------------------------
 
-.. automodule:: binance_chain.utils.encode_utils
+.. automodule:: py_binance_chain.utils.encode_utils
     :members:
     :undoc-members:
     :show-inheritance:

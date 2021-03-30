@@ -1,8 +1,8 @@
 from typing import Optional
 
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.wallet import BaseWallet
-from binance_chain.ledger.client import LedgerApp
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.wallet import BaseWallet
+from py_binance_chain.ledger.client import LedgerApp
 
 
 class LedgerWallet(BaseWallet):

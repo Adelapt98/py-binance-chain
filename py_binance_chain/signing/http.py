@@ -5,8 +5,8 @@ import asyncio
 import aiohttp
 import requests
 
-import binance_chain.messages
-from binance_chain.exceptions import (
+import py_binance_chain.messages
+from py_binance_chain.exceptions import (
     BinanceChainAPIException, BinanceChainRequestException,
     BinanceChainSigningAuthenticationException
 )
@@ -133,7 +133,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         if not self._token:
             raise BinanceChainSigningAuthenticationException("Invalid username and password")
 
-    def sign_order(self, msg: binance_chain.messages.NewOrderMsg, wallet_name: str):
+    def sign_order(self, msg: py_binance_chain.messages.NewOrderMsg, wallet_name: str):
         """Sign a message using a signing service
 
         :param msg: Type of NewOrderMsg
@@ -163,7 +163,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('order/sign', json=data)
 
-    def broadcast_order(self, msg: binance_chain.messages.NewOrderMsg, wallet_name: str):
+    def broadcast_order(self, msg: py_binance_chain.messages.NewOrderMsg, wallet_name: str):
         """Sign and broadcast a message using a signing service
 
         :param msg: Type of NewOrderMsg
@@ -193,7 +193,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('order/broadcast', json=data)
 
-    def sign_cancel_order(self, msg: binance_chain.messages.CancelOrderMsg, wallet_name: str):
+    def sign_cancel_order(self, msg: py_binance_chain.messages.CancelOrderMsg, wallet_name: str):
         """Sign a message using a signing service
 
         :param msg: Type of NewOrderMsg
@@ -217,7 +217,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('order/cancel/sign', json=data)
 
-    def broadcast_cancel_order(self, msg: binance_chain.messages.CancelOrderMsg, wallet_name: str):
+    def broadcast_cancel_order(self, msg: py_binance_chain.messages.CancelOrderMsg, wallet_name: str):
         """Sign and broadcast a message using a signing service
 
         :param msg: Type of NewOrderMsg
@@ -241,7 +241,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('order/cancel/broadcast', json=data)
 
-    def sign_transfer(self, msg: binance_chain.messages.TransferMsg, wallet_name: str):
+    def sign_transfer(self, msg: py_binance_chain.messages.TransferMsg, wallet_name: str):
         """Sign a message using a signing service
 
         :param msg: Type of TransferMsg
@@ -265,7 +265,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('transfer/sign', json=data)
 
-    def broadcast_transfer(self, msg: binance_chain.messages.TransferMsg, wallet_name: str):
+    def broadcast_transfer(self, msg: py_binance_chain.messages.TransferMsg, wallet_name: str):
         """Sign and broadcast a message using a signing service
 
         :param msg: Type of TransferMsg
@@ -289,7 +289,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('transfer/broadcast', json=data)
 
-    def sign_freeze(self, msg: binance_chain.messages.FreezeMsg, wallet_name: str):
+    def sign_freeze(self, msg: py_binance_chain.messages.FreezeMsg, wallet_name: str):
         """Sign a message using a signing service
 
         :param msg: Type of FreezeMsg
@@ -312,7 +312,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('freeze/sign', json=data)
 
-    def broadcast_freeze(self, msg: binance_chain.messages.FreezeMsg, wallet_name: str):
+    def broadcast_freeze(self, msg: py_binance_chain.messages.FreezeMsg, wallet_name: str):
         """Sign and broadcast a message using a signing service
 
         :param msg: Type of FreezeMsg
@@ -335,7 +335,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('freeze/broadcast', json=data)
 
-    def sign_unfreeze(self, msg: binance_chain.messages.UnFreezeMsg, wallet_name: str):
+    def sign_unfreeze(self, msg: py_binance_chain.messages.UnFreezeMsg, wallet_name: str):
         """Sign a message using a signing service
 
         :param msg: Type of UnFreezeMsg
@@ -358,7 +358,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('unfreeze/sign', json=data)
 
-    def broadcast_unfreeze(self, msg: binance_chain.messages.UnFreezeMsg, wallet_name: str):
+    def broadcast_unfreeze(self, msg: py_binance_chain.messages.UnFreezeMsg, wallet_name: str):
         """Sign and broadcast a message using a signing service
 
         :param msg: Type of UnFreezeMsg
@@ -381,7 +381,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('unfreeze/broadcast', json=data)
 
-    def sign_vote(self, msg: binance_chain.messages.VoteMsg, wallet_name: str):
+    def sign_vote(self, msg: py_binance_chain.messages.VoteMsg, wallet_name: str):
         """Sign a message using a signing service
 
         :param msg: Type of VoteMsg
@@ -404,7 +404,7 @@ class HttpApiSigningClient(BaseApiSigningClient):
         }
         return self._post('vote/sign', json=data)
 
-    def broadcast_vote(self, msg: binance_chain.messages.VoteMsg, wallet_name: str):
+    def broadcast_vote(self, msg: py_binance_chain.messages.VoteMsg, wallet_name: str):
         """Sign and broadcast a message using a signing service
 
         :param msg: Type of VoteMsg
@@ -545,7 +545,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         if not self._token:
             raise BinanceChainSigningAuthenticationException("Invalid username and password")
 
-    async def sign_order(self, msg: binance_chain.messages.NewOrderMsg, wallet_name: str):
+    async def sign_order(self, msg: py_binance_chain.messages.NewOrderMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -553,7 +553,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('order/sign', json=data)
     sign_order.__doc__ = HttpApiSigningClient.sign_order.__doc__
 
-    async def broadcast_order(self, msg: binance_chain.messages.NewOrderMsg, wallet_name: str):
+    async def broadcast_order(self, msg: py_binance_chain.messages.NewOrderMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -561,7 +561,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('order/broadcast', json=data)
     broadcast_order.__doc__ = HttpApiSigningClient.broadcast_order.__doc__
 
-    async def sign_cancel_order(self, msg: binance_chain.messages.CancelOrderMsg, wallet_name: str):
+    async def sign_cancel_order(self, msg: py_binance_chain.messages.CancelOrderMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -569,7 +569,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('order/cancel/sign', json=data)
     sign_cancel_order.__doc__ = HttpApiSigningClient.sign_cancel_order.__doc__
 
-    async def broadcast_cancel_order(self, msg: binance_chain.messages.CancelOrderMsg, wallet_name: str):
+    async def broadcast_cancel_order(self, msg: py_binance_chain.messages.CancelOrderMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -577,7 +577,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('order/cancel/broadcast', json=data)
     broadcast_cancel_order.__doc__ = HttpApiSigningClient.broadcast_cancel_order.__doc__
 
-    async def sign_transfer(self, msg: binance_chain.messages.TransferMsg, wallet_name: str):
+    async def sign_transfer(self, msg: py_binance_chain.messages.TransferMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -585,7 +585,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('transfer/sign', json=data)
     sign_transfer.__doc__ = HttpApiSigningClient.sign_transfer.__doc__
 
-    async def broadcast_transfer(self, msg: binance_chain.messages.TransferMsg, wallet_name: str):
+    async def broadcast_transfer(self, msg: py_binance_chain.messages.TransferMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -593,7 +593,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('transfer/broadcast', json=data)
     broadcast_transfer.__doc__ = HttpApiSigningClient.broadcast_transfer.__doc__
 
-    async def sign_freeze(self, msg: binance_chain.messages.FreezeMsg, wallet_name: str):
+    async def sign_freeze(self, msg: py_binance_chain.messages.FreezeMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -601,7 +601,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('freeze/sign', json=data)
     sign_freeze.__doc__ = HttpApiSigningClient.sign_freeze.__doc__
 
-    async def broadcast_freeze(self, msg: binance_chain.messages.FreezeMsg, wallet_name: str):
+    async def broadcast_freeze(self, msg: py_binance_chain.messages.FreezeMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -609,7 +609,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('freeze/broadcast', json=data)
     broadcast_freeze.__doc__ = HttpApiSigningClient.broadcast_freeze.__doc__
 
-    async def sign_unfreeze(self, msg: binance_chain.messages.UnFreezeMsg, wallet_name: str):
+    async def sign_unfreeze(self, msg: py_binance_chain.messages.UnFreezeMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -617,7 +617,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('unfreeze/sign', json=data)
     sign_unfreeze.__doc__ = HttpApiSigningClient.sign_unfreeze.__doc__
 
-    async def broadcast_unfreeze(self, msg: binance_chain.messages.UnFreezeMsg, wallet_name: str):
+    async def broadcast_unfreeze(self, msg: py_binance_chain.messages.UnFreezeMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -625,7 +625,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('unfreeze/broadcast', json=data)
     broadcast_unfreeze.__doc__ = HttpApiSigningClient.broadcast_unfreeze.__doc__
 
-    async def sign_vote(self, msg: binance_chain.messages.VoteMsg, wallet_name: str):
+    async def sign_vote(self, msg: py_binance_chain.messages.VoteMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name
@@ -633,7 +633,7 @@ class AsyncHttpApiSigningClient(BaseApiSigningClient):
         return await self._post('vote/sign', json=data)
     sign_vote.__doc__ = HttpApiSigningClient.sign_vote.__doc__
 
-    async def broadcast_vote(self, msg: binance_chain.messages.VoteMsg, wallet_name: str):
+    async def broadcast_vote(self, msg: py_binance_chain.messages.VoteMsg, wallet_name: str):
         data = {
             'msg': msg.to_sign_dict(),
             'wallet_name': wallet_name

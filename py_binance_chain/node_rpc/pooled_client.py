@@ -4,11 +4,11 @@ from typing import Optional
 from random import shuffle
 
 
-from binance_chain.http import AsyncHttpApiClient
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.node_rpc.http import AsyncHttpRpcClient
-from binance_chain.constants import RpcBroadcastRequestType
-from binance_chain.messages import Msg
+from py_binance_chain.http import AsyncHttpApiClient
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.node_rpc.http import AsyncHttpRpcClient
+from py_binance_chain.constants import RpcBroadcastRequestType
+from py_binance_chain.messages import Msg
 
 
 class PooledRpcClient:

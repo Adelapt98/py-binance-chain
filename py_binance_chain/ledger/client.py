@@ -4,8 +4,8 @@ from typing import Optional
 
 from btchip.btchip import writeUint32LE, BTChipException
 
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.ledger.exceptions import LedgerRequestException
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.ledger.exceptions import LedgerRequestException
 
 
 class LedgerApp:

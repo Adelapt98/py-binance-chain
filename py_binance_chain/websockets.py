@@ -5,8 +5,8 @@ from random import random
 from typing import Dict, Callable, Awaitable, Optional, List
 
 import websockets as ws
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.constants import KlineInterval
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.constants import KlineInterval
 
 
 class ReconnectingWebsocket:

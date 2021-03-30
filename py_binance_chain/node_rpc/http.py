@@ -6,10 +6,10 @@ import requests
 import aiohttp
 import ujson
 
-from binance_chain.exceptions import BinanceChainRPCException, BinanceChainRequestException
-from binance_chain.constants import RpcBroadcastRequestType
-from binance_chain.messages import Msg
-from binance_chain.node_rpc.request import RpcRequest
+from py_binance_chain.exceptions import BinanceChainRPCException, BinanceChainRequestException
+from py_binance_chain.constants import RpcBroadcastRequestType
+from py_binance_chain.messages import Msg
+from py_binance_chain.node_rpc.request import RpcRequest
 
 
 requests.models.json = ujson
