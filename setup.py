@@ -31,11 +31,11 @@ def install_requires():
 
 
 setup(
-    name='python-binance-chain',
+    name='py-binance-chain',
     version=find_version("binance_chain", "__init__.py"),
     packages=find_packages(),
     description='Binance Chain HTTP API python implementation',
-    url='https://github.com/sammchardy/python-binance-chain',
+    url='https://github.com/Adelapt98/python-binance-chain',
     author='Sam McHardy',
     license='MIT',
     author_email='',
