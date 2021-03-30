@@ -1,5 +1,5 @@
 =======================================
-Welcome to python-binance-chain v0.1.20
+Welcome to py-binance-chain v0.1
 =======================================
 
 .. image:: https://img.shields.io/pypi/v/python-binance-chain.svg
@@ -20,14 +20,14 @@ Welcome to python-binance-chain v0.1.20
 .. image:: https://img.shields.io/pypi/pyversions/python-binance-chain.svg
     :target: https://pypi.python.org/pypi/python-binance-chain
 
-This is an unofficial Python3 wrapper for the `Binance Chain API <https://binance-chain.github.io/api-reference/dex-api/paths.html>`_. I am in no way affiliated with Binance, use at your own risk.
+This is a fork of python-binance-chain(an unofficial Python3 wrapper for the `Binance Chain API <https://binance-chain.github.io/api-reference/dex-api/paths.html>`_) to solve the problem of dependencies. I am in no way affiliated with Binance, use at your own risk.
 
 
 PyPi
-  https://pypi.python.org/pypi/python-binance-chain
+  https://pypi.python.org/pypi/py-binance-chain
 
 Source code
-  https://github.com/sammchardy/python-binance-chain
+  https://github.com/Adelapt98/py-binance-chain
 
 
 Features
@@ -70,7 +70,7 @@ Quick Start
 
 .. code:: bash
 
-    pip install python-binance-chain
+    pip install py-binance-chain
 
 If having issues with secp256k1 check the `Installation instructions for the sec256k1-py library <https://github.com/ludbb/secp256k1-py#installation>`_
 
@@ -972,7 +972,7 @@ Make sure you have registered on Binance Chain with your Ledger address.
 
 Make sure that you have connected your Ledger and are in the Binance Chain app.
 
-Install python-binance-chain with this optional library like so `pip install python-binance-chain[ledger]`
+Install py-binance-chain with this optional library like so `pip install py-binance-chain[ledger]`
 
 Uses the `btchip-python library <https://github.com/LedgerHQ/btchip-python>`_ if having issues installing check their github page
 
@@ -1029,7 +1029,7 @@ Create a Wallet to use with the HTTP and Node RPC clients
 Requests and AioHTTP Settings
 -----------------------------
 
-`python-binance-chain` uses `requests <http://docs.python-requests.org>`_ and `aiohttp <https://github.com/aio-libs/aiohttp>`_ libraries.
+`py-binance-chain` uses `requests <http://docs.python-requests.org>`_ and `aiohttp <https://github.com/aio-libs/aiohttp>`_ libraries.
 
 You can set custom requests parameters for all API calls when creating any of the http clients.
 
@@ -1075,8 +1075,8 @@ Running Tests
 
 .. code-block:: bash
 
-    git clone https://github.com/sammchardy/python-binance-chain.git
-    cd python-binance-chain
+    git clone https://github.com/Adelapt98/py-binance-chain.git
+    cd py-binance-chain
     pip install -r test-requirements.txt
 
     python -m pytest tests/
@@ -1101,14 +1101,14 @@ Thanks
 Other Exchanges
 ---------------
 
-If you use `Binance <https://www.binance.com/?ref=10099792>`_ check out my `python-binance <https://github.com/sammchardy/python-binance>`_ library.
+If you use `Binance <https://www.binance.com/?ref=10099792>`_ check out `python-binance <https://github.com/sammchardy/python-binance>`_ library.
 
-If you use `Kucoin <https://www.kucoin.com/?rcode=E42cWB>`_ check out my `python-kucoin <https://github.com/sammchardy/python-kucoin>`_ library.
+If you use `Kucoin <https://www.kucoin.com/?rcode=E42cWB>`_ check out `python-kucoin <https://github.com/sammchardy/python-kucoin>`_ library.
 
 If you use `Allcoin <https://www.allcoin.com/Account/RegisterByPhoneNumber/?InviteCode=MTQ2OTk4MDgwMDEzNDczMQ==>`_ check out my `python-allucoin <https://github.com/sammchardy/python-allcoin>`_ library.
 
-If you use `IDEX <https://idex.market>`_ check out my `python-idex <https://github.com/sammchardy/python-idex>`_ library.
+If you use `IDEX <https://idex.market>`_ check out `python-idex <https://github.com/sammchardy/python-idex>`_ library.
 
-If you use `BigONE <https://big.one>`_ check out my `python-bigone <https://github.com/sammchardy/python-bigone>`_ library.
+If you use `BigONE <https://big.one>`_ check out `python-bigone <https://github.com/sammchardy/python-bigone>`_ library.
 
 .. image:: https://analytics-pixel.appspot.com/UA-111417213-1/github/python-kucoin?pixel
