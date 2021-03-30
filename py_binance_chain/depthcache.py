@@ -2,9 +2,9 @@ import time
 from operator import itemgetter
 from typing import Optional
 
-from binance_chain.websockets import BinanceChainSocketManager
-from binance_chain.http import HttpApiClient
-from binance_chain.environment import BinanceEnvironment
+from py_binance_chain.websockets import BinanceChainSocketManager
+from py_binance_chain.http import HttpApiClient
+from py_binance_chain.environment import BinanceEnvironment
 
 
 class DepthCache(object):

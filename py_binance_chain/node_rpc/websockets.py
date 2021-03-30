@@ -2,12 +2,12 @@ import asyncio
 import itertools
 from typing import Callable, Awaitable, Optional, Dict
 
-from binance_chain.node_rpc.http import HttpRpcClient
-from binance_chain.websockets import ReconnectingWebsocket, BinanceChainSocketManagerBase
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.constants import RpcBroadcastRequestType
-from binance_chain.messages import Msg
-from binance_chain.node_rpc.request import RpcRequest
+from py_binance_chain.node_rpc.http import HttpRpcClient
+from py_binance_chain.websockets import ReconnectingWebsocket, BinanceChainSocketManagerBase
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.constants import RpcBroadcastRequestType
+from py_binance_chain.messages import Msg
+from py_binance_chain.node_rpc.request import RpcRequest
 
 
 class ReconnectingRpcWebsocket(ReconnectingWebsocket):

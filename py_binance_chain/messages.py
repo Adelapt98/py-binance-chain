@@ -4,13 +4,13 @@ from typing import List, Dict, Union, Optional, NamedTuple
 from decimal import Decimal
 from collections import OrderedDict
 
-from binance_chain.wallet import BaseWallet
-from binance_chain.constants import TimeInForce, OrderSide, OrderType, VoteOption
-from binance_chain.protobuf.dex_pb2 import (
+from py_binance_chain.wallet import BaseWallet
+from py_binance_chain.constants import TimeInForce, OrderSide, OrderType, VoteOption
+from py_binance_chain.protobuf.dex_pb2 import (
     NewOrder, CancelOrder, TokenFreeze, TokenUnfreeze, StdTx, StdSignature, Send, Input, Output, Token, Vote
 )
-from binance_chain.utils.encode_utils import encode_number, varint_encode
-from binance_chain.utils.segwit_addr import decode_address
+from py_binance_chain.utils.encode_utils import encode_number, varint_encode
+from py_binance_chain.utils.segwit_addr import decode_address
 
 # An identifier for tools triggering broadcast transactions, set to zero if unwilling to disclose.
 BROADCAST_SOURCE = 0

@@ -3,8 +3,8 @@ import binascii
 
 import pytest
 
-from binance_chain.utils.encode_utils import encode_number, varint_encode
-from binance_chain.utils.segwit_addr import decode_address, address_from_public_key
+from py_binance_chain.utils.encode_utils import encode_number, varint_encode
+from py_binance_chain.utils.segwit_addr import decode_address, address_from_public_key
 
 
 @pytest.mark.parametrize("num, expected", [

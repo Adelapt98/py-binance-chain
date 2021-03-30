@@ -1,7 +1,7 @@
 import pytest
 
-from binance_chain.node_rpc.pooled_client import PooledRpcClient
-from binance_chain.environment import BinanceEnvironment
+from py_binance_chain.node_rpc.pooled_client import PooledRpcClient
+from py_binance_chain.environment import BinanceEnvironment
 
 
 class TestRpcPooled:

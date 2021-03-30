@@ -5,9 +5,9 @@ import pytest
 import requests_mock
 from urllib.parse import urlencode
 
-from binance_chain.http import HttpApiClient, AsyncHttpApiClient
-from binance_chain.constants import PeerType, OrderSide, OrderType, TransactionSide, TransactionType, KlineInterval
-from binance_chain.environment import BinanceEnvironment
+from py_binance_chain.http import HttpApiClient, AsyncHttpApiClient
+from py_binance_chain.constants import PeerType, OrderSide, OrderType, TransactionSide, TransactionType, KlineInterval
+from py_binance_chain.environment import BinanceEnvironment
 
 
 class TestClient:
@@ -38,7 +38,7 @@ class TestClient:
         assert httpclient.get_peers()
 
     def test_get_transaction(self, httpclient):
-        assert httpclient.get_transaction('B17DB550FCE00268C07D11F312E86F72813481124831B798FDC491E363D17989')
+        assert httpclient.get_transaction('979A774D52CE0C5ADBA15C7257828FA8D90B983B84ED249D6B2EABC1714F9319')
 
     @pytest.mark.parametrize("peer_type", [
         PeerType.NODE,

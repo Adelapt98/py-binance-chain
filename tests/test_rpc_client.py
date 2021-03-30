@@ -2,12 +2,12 @@ import itertools
 
 import pytest
 
-from binance_chain.http import HttpApiClient
-from binance_chain.node_rpc.http import HttpRpcClient, AsyncHttpRpcClient
-from binance_chain.node_rpc.request import RpcRequest
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.wallet import Wallet
-from binance_chain.constants import PeerType
+from py_binance_chain.http import HttpApiClient
+from py_binance_chain.node_rpc.http import HttpRpcClient, AsyncHttpRpcClient
+from py_binance_chain.node_rpc.request import RpcRequest
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.wallet import Wallet
+from py_binance_chain.constants import PeerType
 
 
 class TestHttpRpcClient:

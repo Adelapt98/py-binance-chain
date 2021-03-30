@@ -1,8 +1,8 @@
 import pytest
 
-from binance_chain.depthcache import DepthCache, DepthCacheManager
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.http import HttpApiClient
+from py_binance_chain.depthcache import DepthCache, DepthCacheManager
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.http import HttpApiClient
 
 
 class TestDepthCache:

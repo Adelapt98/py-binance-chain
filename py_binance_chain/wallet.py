@@ -6,8 +6,8 @@ from secp256k1 import PrivateKey
 from mnemonic import Mnemonic
 from pycoin.symbols.btc import network
 
-from binance_chain.utils.segwit_addr import address_from_public_key, decode_address
-from binance_chain.environment import BinanceEnvironment
+from py_binance_chain.utils.segwit_addr import address_from_public_key, decode_address
+from py_binance_chain.environment import BinanceEnvironment
 
 
 class MnemonicLanguage(str, Enum):
@@ -62,7 +62,7 @@ class BaseWallet:
 
     def _get_http_client(self):
         if not self._http_client:
-            from binance_chain.http import HttpApiClient
+            from py_binance_chain.http import HttpApiClient
             self._http_client = HttpApiClient(self._env)
         return self._http_client
 

@@ -1,9 +1,9 @@
 import pytest
 import asyncio
 
-from binance_chain.http import HttpApiClient
-from binance_chain.node_rpc.websockets import ReconnectingRpcWebsocket, WebsocketRpcClient
-from binance_chain.environment import BinanceEnvironment
+from py_binance_chain.http import HttpApiClient
+from py_binance_chain.node_rpc.websockets import ReconnectingRpcWebsocket, WebsocketRpcClient
+from py_binance_chain.environment import BinanceEnvironment
 
 
 class TestRpcWebsockets:

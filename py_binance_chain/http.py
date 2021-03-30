@@ -6,10 +6,10 @@ import asyncio
 import aiohttp
 import requests
 
-import binance_chain.messages
-from binance_chain.environment import BinanceEnvironment
-from binance_chain.constants import PeerType, KlineInterval, OrderSide, OrderStatus, TransactionSide, TransactionType
-from binance_chain.exceptions import (
+import py_binance_chain.messages
+from py_binance_chain.environment import BinanceEnvironment
+from py_binance_chain.constants import PeerType, KlineInterval, OrderSide, OrderStatus, TransactionSide, TransactionType
+from py_binance_chain.exceptions import (
     BinanceChainAPIException, BinanceChainRequestException, BinanceChainBroadcastException
 )
 
@@ -324,7 +324,7 @@ class HttpApiClient(BaseApiClient):
         }
         return self._get("depth", data=data)
 
-    def broadcast_msg(self, msg: binance_chain.messages.Msg, sync: bool = False):
+    def broadcast_msg(self, msg: py_binance_chain.messages.Msg, sync: bool = False):
         """Broadcast a message
 
         https://binance-chain.github.io/api-reference/dex-api/paths.html#apiv1broadcast
@@ -850,7 +850,7 @@ class AsyncHttpApiClient(BaseApiClient):
         return await self._get("depth", data=data)
     get_order_book.__doc__ = HttpApiClient.get_order_book.__doc__
 
-    async def broadcast_msg(self, msg: binance_chain.messages.Msg, sync: bool = False):
+    async def broadcast_msg(self, msg: py_binance_chain.messages.Msg, sync: bool = False):
         # fetch account detail
         # account = self.get_account(self.msg.wallet.address)
 
