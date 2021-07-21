@@ -72,8 +72,6 @@ Quick Start
 
     pip install py-binance-chain
 
-If having issues with secp256k1 check the `Installation instructions for the sec256k1-py library <https://github.com/ludbb/secp256k1-py#installation>`_
-
 If using the production server there is no need to pass the environment variable.
 
 .. code:: python
